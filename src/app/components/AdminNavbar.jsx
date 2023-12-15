@@ -2,16 +2,15 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import MenuIcon from "@mui/icons-material/Menu";
+import CancelIcon from "@mui/icons-material/Cancel";
 import { useSelector, useDispatch } from "react-redux";
 import { UserLogout } from "../redux/authSlice";
 import toast, { Toaster } from "react-hot-toast";
 
 function AdminNav() {
   const dispatch = useDispatch();
-  const IsLogedIn = useSelector((state) => state.auth.isLogedIn);
-  const item = useSelector((item) => item.cart);
+  const IsAdmin = useSelector((state) => state.auth.isAdmin);
   const pathname = usePathname();
   const [toggle, settoggle] = useState(false);
   const Toggle = () => {
@@ -97,9 +96,21 @@ function AdminNav() {
 
           <div className="flex flex-row gap-5  items-center ld:order-1 sm:order-none md:order-1">
             <div className="md:block sm:hidden">
-              <Link href={"/account/Login"}>
-                <AccountCircleIcon className="text-black" fontSize="medium" />
-              </Link>
+              {IsAdmin ? (
+                <button
+                  onClick={handleLogout}
+                  className="border-2 border-black px-4 py-2"
+                >
+                  Logout
+                </button>
+              ) : (
+                <Link
+                  className="border-2 border-black px-4 py-2"
+                  href={"/dashboard/admin/login"}
+                >
+                  Login
+                </Link>
+              )}
             </div>
             <div className="sm:block md:hidden">
               <button
@@ -110,7 +121,11 @@ function AdminNav() {
                     : "text-black border-2 border-black Hamburger px-2 py-2"
                 }
               >
-                {toggle ? "X" : "Menu"}
+                {toggle ? (
+                  <CancelIcon fontSize="large" />
+                ) : (
+                  <MenuIcon fontSize="large" />
+                )}
               </button>
             </div>
           </div>
@@ -173,7 +188,7 @@ function AdminNav() {
                   Contact
                 </Link>
               </li>
-              {IsLogedIn ? (
+              {IsAdmin ? (
                 <li className="text-lg">
                   <button
                     onClick={handleLogout}
@@ -186,7 +201,7 @@ function AdminNav() {
                 <li className="text-lg">
                   <Link
                     className="border-2 border-white px-4 py-2"
-                    href="/account/Login"
+                    href="/dashboard/admin/login"
                   >
                     Login
                   </Link>

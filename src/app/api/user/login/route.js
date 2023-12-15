@@ -20,13 +20,14 @@ export async function POST(request) {
 
     if (user) {
       return NextResponse.json({
-        _id: user._id,
-        name: user.name,
-        email: user.email,
         isAdmin: user.isAdmin,
-        picture: user.picture,
-        createdAt: user.createdAt,
-        token: generateToken(user._id),
+        token: generateToken(
+          user._id,
+          user.email,
+          user.name,
+          user.picture,
+          user.createdAt
+        ),
       });
     } else {
       return NextResponse.json(

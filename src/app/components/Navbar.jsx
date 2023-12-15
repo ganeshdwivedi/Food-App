@@ -7,6 +7,8 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { useSelector, useDispatch } from "react-redux";
 import { UserLogout } from "../redux/authSlice";
 import toast, { Toaster } from "react-hot-toast";
+import MenuIcon from "@mui/icons-material/Menu";
+import CancelIcon from "@mui/icons-material/Cancel";
 
 function Nav() {
   const dispatch = useDispatch();
@@ -100,7 +102,11 @@ function Nav() {
             </div>
             <div className="sm:block md:hidden">
               <button onClick={Toggle} className="text-black Hamburger px-2 ">
-                {toggle ? "X" : "Menu"}
+                {toggle ? (
+                  <CancelIcon fontSize="large" />
+                ) : (
+                  <MenuIcon fontSize="large" />
+                )}
               </button>
             </div>
           </div>

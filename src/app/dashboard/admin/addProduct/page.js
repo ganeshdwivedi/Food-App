@@ -1,13 +1,11 @@
 "use client";
 import React, { useState } from "react";
 import axios from "axios";
-import { useRouter } from "next/navigation";
 import toast, { Toaster } from "react-hot-toast";
-import Link from "next/link";
 import { useSelector } from "react-redux";
 
 export default function page() {
-  const IsAdmin = useSelector((state) => state.auth.user.admin);
+  const IsAdmin = useSelector((state) => state.auth.isAdmin);
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
@@ -146,7 +144,9 @@ export default function page() {
           <Toaster />
         </div>
       ) : (
-        <h1>You can't access this page</h1>
+        <h1 className="pt-36 text-center font-bold text-4xl">
+          You can't access this page
+        </h1>
       )}
     </div>
   );

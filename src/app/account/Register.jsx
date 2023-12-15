@@ -11,7 +11,7 @@ export default function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [picture, setPicture] = useState("");
-
+  const isAdmin = false;
   const handleSubmit = async () => {
     try {
       if (name != "" && password != "" && email != "") {
@@ -20,6 +20,7 @@ export default function Register() {
           password,
           name,
           picture,
+          isAdmin,
         });
         console.log(response.data);
         router.push("/account/Login");

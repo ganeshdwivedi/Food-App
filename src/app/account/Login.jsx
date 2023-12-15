@@ -21,7 +21,7 @@ function Login() {
           email,
           password,
         });
-
+        console.log(response.data);
         dispatch(UserLogin(response.data));
         router.push("/menu");
       } else {

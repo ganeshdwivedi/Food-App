@@ -21,8 +21,8 @@ function page() {
           email,
           password,
         });
-        dispatch(UserLogin(response.data));
         console.log(response.data.isAdmin);
+        dispatch(UserLogin(response.data));
         response.data.isAdmin
           ? router.push("/dashboard/admin/products")
           : router.push("/menu");

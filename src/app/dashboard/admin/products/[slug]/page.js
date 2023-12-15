@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { useSelector } from "react-redux";
 
 const page = ({ params }) => {
-  const IsAdmin = useSelector((state) => state.auth.user.admin);
+  const IsAdmin = useSelector((state) => state.auth.isAdmin);
   const router = useRouter();
   const [product, setProduct] = useState([]);
   const slug = params.slug.replace(/-/g, " ");

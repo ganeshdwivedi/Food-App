@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useSelector } from "react-redux";
 
 const page = () => {
-  const IsAdmin = useSelector((state) => state.auth.user.isAdmin);
+  const IsAdmin = useSelector((state) => state.auth.isAdmin);
   const [product, setProduct] = useState([]);
 
   const getProduct = async () => {
@@ -17,7 +17,7 @@ const page = () => {
     getProduct();
   }, []);
 
-  const GetAllProducts = product.map((item, index) => {
+  const GetAllProducts = product.map((item) => {
     let slug = item.title.replace(/ /g, "-");
     console.log(slug);
     return (
@@ -26,12 +26,11 @@ const page = () => {
           key={item._id}
           className="md:w-[25vw] text-center sm:w-[49vw] h-[full] md:my-8 sm:my-2 rounded-[25px] md:p-4 sm:p-2 overflow-hidden"
         >
-          <Link href={`/menu/${slug}`}>
-            <img
-              className=" hover:scale-[1.03] hover:transition-all hover:delay-[120ms] md:w-full md:h-[40vh] sm:h-[25vh] sm:w-full "
-              src={item.thumbnail}
-            />
-          </Link>
+          <img
+            className=" hover:scale-[1.03] hover:transition-all hover:delay-[120ms] md:w-full md:h-[40vh] sm:h-[25vh] sm:w-full "
+            src={item.thumbnail}
+          />
+
           <div className="mt-2">
             <p className="font-medium text-3xl text-slate-800">{item.title}</p>
             <h4 className="font-bold text-2xl text-red-800">₹ {item.price}</h4>
@@ -42,18 +41,24 @@ const page = () => {
   });
   return (
     <div className="pt-32 overflow-hidden">
-      <h1 className="text-center text-3xl">
-        Here are all the products added by admin
-      </h1>
-      <Link
-        href={"/dashboard/admin/addProduct"}
-        className="px-4 py-2 rounded-[25px] bg-red-700 text-white"
-      >
-        Add Product
-      </Link>
-      <div className="grid md:grid-cols-2 sm:grid-cols-2 sm:gap-x-5 sm:gap-y-0 md:gap-x-10">
-        {GetAllProducts}
-      </div>
+      {IsAdmin ? (
+        <div>
+          <h1 className="text-center text-3xl m-10">
+            Here are all the products added by admin
+          </h1>
+          <Link
+            href={"/dashboard/admin/addProduct"}
+            className="px-4 text-center m-5 py-2 rounded-[25px] bg-red-700 text-white"
+          >
+            Add Product
+          </Link>
+          <div className="grid md:grid-cols-3 sm:grid-cols-2 sm:gap-x-5 sm:gap-y-0 md:gap-x-10">
+            {GetAllProducts}
+          </div>
+        </div>
+      ) : (
+        <h1 className="text-center text-3xl">You can't access this page</h1>
+      )}
     </div>
   );
 };
