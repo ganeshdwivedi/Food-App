@@ -31,7 +31,6 @@ function Footer() {
             <p className="text-sm  font-light pb-2">Sustainability</p>
             <p className="text-sm  font-light pb-2">Careers</p>
             <p className="text-sm  font-light pb-2">Store Finder</p>
-            <p className="text-sm  font-light pb-2">PUMA DNA</p>
           </div>
         </div>
         <div className="sm:m-0 lg:m-5 ">

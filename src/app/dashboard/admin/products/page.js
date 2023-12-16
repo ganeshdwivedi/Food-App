@@ -45,12 +45,9 @@ const page = () => {
           <h1 className="text-center text-3xl m-10">
             Here are all the products added by admin
           </h1>
-          <Link
-            href={"/dashboard/admin/addProduct"}
-            className="px-4 text-center m-5 py-2 rounded-[25px] bg-red-700 text-white"
-          >
-            Add Product
-          </Link>
+          <p className="text-lg text-slate-700 text-center">
+            You can update or delete prouct by selecting product
+          </p>
           <div className="grid md:grid-cols-3 sm:grid-cols-2 sm:gap-x-5 sm:gap-y-0 md:gap-x-10">
             {GetAllProducts}
           </div>

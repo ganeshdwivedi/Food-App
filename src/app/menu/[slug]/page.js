@@ -26,7 +26,7 @@ function ReviewProduct({ params }) {
 
   return (
     <>
-      <div className="pt-10 text-start">
+      <div className="pt-14 text-start">
         <div className="lg:flex lg:gap-20 max-w-[1200px] m-auto lg:mt-20 px-14 py-10 justify-center">
           <img
             className="w-[50vw] h-full"

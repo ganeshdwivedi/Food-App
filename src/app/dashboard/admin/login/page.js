@@ -36,7 +36,7 @@ function page() {
   return (
     <>
       <section className="overflow-hidden">
-        <div className='md:w-[99.5vw] sm:w-[100vw] bg-cover bg-center bg-[url("https://img.freepik.com/premium-photo/beautiful-abstract-gold-blue-transparent-floral-design-background-banner-copy-space-minimalism_878783-7097.jpg?w=996")] pt-20  font-[FFDINforPumaW07-Regular-latin] relative  '>
+        <div className='md:w-[99.5vw] sm:w-[100vw] bg-cover bg-center bg-[url("https://img.freepik.com/free-vector/abstract-spheres-background_23-2149158752.jpg?w=740&t=st=1702748029~exp=1702748629~hmac=80ef0f215bc82f26f59ce68a7a221e96294554558428f629efcc61b51bc2b3dc")] pt-20  font-[FFDINforPumaW07-Regular-latin] relative  '>
           <div className="m-36 sm:m-2 ">
             <h1 className="text-4xl sm:pt-2 font-extrabold text-left lg:pl-20 pb-5 ">
               Admin Login

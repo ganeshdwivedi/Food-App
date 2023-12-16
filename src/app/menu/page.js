@@ -54,7 +54,7 @@ const page = () => {
     );
   });
   return (
-    <div className="flex justify-center sm:py-[4.5rem] py-10">
+    <div className="flex justify-center sm:py-[10vh] py-12">
       {
         <div className="grid md:grid-cols-2 sm:grid-cols-2 sm:gap-x-5 sm:gap-y-0 md:gap-x-10">
           {GetAllProducts}

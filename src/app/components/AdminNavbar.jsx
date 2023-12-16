@@ -41,27 +41,6 @@ function AdminNav() {
               <li className="">
                 <Link
                   className={`link ${
-                    pathname === "/" ? "text-red-900" : ""
-                  } hover:text-red-900`}
-                  href="/"
-                >
-                  Home
-                </Link>
-              </li>
-
-              <li className="">
-                <Link
-                  className={`link ${
-                    pathname === "/menu" ? "text-red-800" : ""
-                  } hover:text-red-800`}
-                  href="/menu"
-                >
-                  Menu
-                </Link>
-              </li>
-              <li className="">
-                <Link
-                  className={`link ${
                     pathname === "/dashboard/admin/products"
                       ? "text-red-800"
                       : ""
@@ -74,21 +53,13 @@ function AdminNav() {
               <li className="">
                 <Link
                   className={`link ${
-                    pathname === "/about" ? "text-red-800" : ""
+                    pathname === "/dashboard/admin/addproducts"
+                      ? "text-red-800"
+                      : ""
                   } hover:text-red-800`}
-                  href="/about"
+                  href="/dashboard/admin/addproducts"
                 >
-                  About
-                </Link>
-              </li>
-              <li className="">
-                <Link
-                  className={`link ${
-                    pathname === "/contact" ? "text-red-800" : ""
-                  } hover:text-red-800`}
-                  href="/contact"
-                >
-                  Contact
+                  Add Products
                 </Link>
               </li>
             </ul>
@@ -115,11 +86,7 @@ function AdminNav() {
             <div className="sm:block md:hidden">
               <button
                 onClick={Toggle}
-                className={
-                  toggle
-                    ? "text-white border-2 border-white Hamburger px-2 py-2"
-                    : "text-black border-2 border-black Hamburger px-2 py-2"
-                }
+                className={"text-black Hamburger px-2 py-2"}
               >
                 {toggle ? (
                   <CancelIcon fontSize="large" />
@@ -132,24 +99,14 @@ function AdminNav() {
         </div>
         {toggle ? (
           <div
-            className={`md:hidden fixed w-[100vw] h-[100vh] z-40 px-[10vw] bg-black text-white sm:block sm:pt-[30vh]`}
+            className={`md:hidden fixed w-[100vw] h-[100vh] z-40 px-[10vw] bg-white text-black sm:block sm:pt-[30vh]`}
           >
             <p className="text-3xl mb-20">Admin Dashboard</p>
             <ul className={`flex-col flex font-medium gap-4 text-base`}>
-              <li className="text-lg">
+              <li className="text-xl">
                 <Link
                   className={`link ${
-                    pathname === "/" ? "text-red-900" : ""
-                  } hover:text-red-900`}
-                  href="/"
-                >
-                  Home
-                </Link>
-              </li>
-              <li className="text-lg">
-                <Link
-                  className={`link ${
-                    pathname === "/dahsboard/admin/products"
+                    pathname === "/dashboard/admin/products"
                       ? "text-red-800"
                       : ""
                   } hover:text-red-800`}
@@ -158,50 +115,32 @@ function AdminNav() {
                   Products
                 </Link>
               </li>
-              <li className="text-lg">
+              <li className="text-xl">
                 <Link
                   className={`link ${
-                    pathname === "/menu" ? "text-red-800" : ""
+                    pathname === "/dashboard/admin/addproducts"
+                      ? "text-red-800"
+                      : ""
                   } hover:text-red-800`}
-                  href="/menu"
+                  href="/dashboard/admin/addproducts"
                 >
-                  Menu
-                </Link>
-              </li>
-              <li className="text-lg">
-                <Link
-                  className={`link ${
-                    pathname === "/about" ? "text-red-800" : ""
-                  } hover:text-red-800`}
-                  href="/about"
-                >
-                  About
-                </Link>
-              </li>
-              <li className="text-lg">
-                <Link
-                  className={`link ${
-                    pathname === "/contact" ? "text-red-800" : ""
-                  } hover:text-red-800`}
-                  href="/contact"
-                >
-                  Contact
+                  Add Products
                 </Link>
               </li>
               {IsAdmin ? (
-                <li className="text-lg">
+                <li className="text-xl">
                   <button
+                    className="px-4 py-2 border-black border-2"
                     onClick={handleLogout}
-                    className="border-2 border-white px-4 py-2"
                   >
                     Logout
                   </button>
                 </li>
               ) : (
-                <li className="text-lg">
+                <li className="text-xl">
                   <Link
-                    className="border-2 border-white px-4 py-2"
-                    href="/dashboard/admin/login"
+                    href={"/dashboard/admin/login"}
+                    className="px-4 py-2 border-black border-2"
                   >
                     Login
                   </Link>

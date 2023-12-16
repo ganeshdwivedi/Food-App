@@ -36,7 +36,7 @@ function page() {
             alt={item.title}
           />
           <p className="font-bold text-sm">{item.title}</p>
-          <p>${item.price}</p>
+          <p> ₹{item.price}</p>
         </Link>
 
         <button

@@ -42,7 +42,7 @@ export default function page({ params }) {
   return (
     <div>
       {IsAdmin ? (
-        <div className="pt-20 bg-[url('https://img.freepik.com/premium-photo/beautiful-abstract-gold-green-transparent-floral-design-background-banner-copy-space-minimalism_878783-8665.jpg?w=996')] bg-cover bg-center relative">
+        <div className="pt-20 bg-[url('https://img.freepik.com/premium-photo/blue-glass-clear-circle-plate-background-cosmetic-product-abstract-wallpaper-scene-with-ball-aqua-transparent-3d-illustration-rendering_42100-2391.jpg?w=900')] bg-cover bg-center relative">
           <div className="sm:mt-20 md:mt-0 sm:m-2 ">
             <div className="mb-[-15px] p-10 flex justify-center">
               <form
