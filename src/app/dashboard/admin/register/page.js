@@ -22,7 +22,6 @@ export default function page() {
           picture,
           isAdmin,
         });
-        console.log(response.data);
         router.push("/dashboard/admin/login");
         toast.success("Registeration successfull.");
       } else {
@@ -35,7 +34,7 @@ export default function page() {
   };
 
   return (
-    <div className="lg:pt-20 bg-[url('https://img.freepik.com/premium-photo/beautiful-abstract-gold-green-transparent-floral-design-background-banner-copy-space-minimalism_878783-8665.jpg?w=996')] bg-cover bg-center relative  overflow-x-clip ">
+    <div className="lg:pt-20 bg-[url('https://img.freepik.com/premium-vector/polygon-abstract-polygonal-geometric-triangle-background_212889-5257.jpg?w=996')] bg-cover bg-center relative  overflow-x-clip ">
       <div className="sm:pt-20 md:mt-0 sm:m-2 ">
         <div className="mb-[-15px] p-10 flex justify-center">
           <form
@@ -116,7 +115,7 @@ export default function page() {
                 By logging in, I confirm that I have read and accept the Terms
                 and Conditionsand the Privacy Policy.
               </p>
-              <Link href={"/account/Login"} className="self-start">
+              <Link href={"/dashboard/admin/login"} className="self-start">
                 Already Have an account
                 <span className="text-lg font-bold underline"> Login</span>
               </Link>

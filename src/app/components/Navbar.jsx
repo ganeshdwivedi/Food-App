@@ -29,7 +29,7 @@ function Nav() {
     <>
       <nav className="">
         <div
-          className={`flex backdrop-blur-sm px-10 sm:fixed flex-row md:justify-around sm:justify-between z-50 bg-transparent p-5 absolute w-[100%]`}
+          className={`flex backdrop-blur-sm px-10 sm:fixed flex-row md:justify-around sm:justify-between z-50 bg-transparent p-3 absolute w-[100%]`}
         >
           <div className="self-center ">
             <Link href={"/"}>

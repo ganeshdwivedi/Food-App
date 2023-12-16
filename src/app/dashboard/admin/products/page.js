@@ -12,31 +12,30 @@ const page = () => {
     const response = await axios.get("/api/product/all");
     setProduct(response.data.products);
   };
-  console.log(product);
+
   useEffect(() => {
     getProduct();
   }, []);
 
   const GetAllProducts = product.map((item) => {
     let slug = item.title.replace(/ /g, "-");
-    console.log(slug);
+
     return (
-      <Link key={item._id} href={`/dashboard/admin/products/${slug}`}>
-        <div
-          key={item._id}
-          className="md:w-[25vw] text-center sm:w-[49vw] h-[full] md:my-8 sm:my-2 rounded-[25px] md:p-4 sm:p-2 overflow-hidden"
-        >
+      <div
+        key={item._id}
+        className="md:w-[25vw] display text-center sm:w-[49vw] h-[full] md:my-4 sm:my-2 rounded-[25px] md:p-2 sm:p-2 overflow-hidden"
+      >
+        <Link href={`/dashboard/admin/products/${slug}`}>
           <img
             className=" hover:scale-[1.03] hover:transition-all hover:delay-[120ms] md:w-full md:h-[40vh] sm:h-[25vh] sm:w-full "
             src={item.thumbnail}
           />
-
-          <div className="mt-2">
-            <p className="font-medium text-3xl text-slate-800">{item.title}</p>
-            <h4 className="font-bold text-2xl text-red-800">₹ {item.price}</h4>
-          </div>
+        </Link>
+        <div className="mt-2">
+          <p className="font-medium text-3xl text-slate-800">{item.title}</p>
+          <h4 className="font-bold text-2xl text-red-800">₹ {item.price}</h4>
         </div>
-      </Link>
+      </div>
     );
   });
   return (

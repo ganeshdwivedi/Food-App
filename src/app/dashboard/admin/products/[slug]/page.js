@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { useSelector } from "react-redux";
+import Link from "next/link";
 
 const page = ({ params }) => {
   const IsAdmin = useSelector((state) => state.auth.isAdmin);
@@ -21,7 +22,6 @@ const page = ({ params }) => {
   const handleDelete = async () => {
     try {
       const response = await axios.delete(`/api/product/delete/${slug}`);
-
       console.log(response.data.message);
       router.push("/dashboard/admin/products");
     } catch (error) {
@@ -32,7 +32,7 @@ const page = ({ params }) => {
   return (
     <div>
       {IsAdmin ? (
-        <div className="pt-36 md:grid md:grid-cols-6 flex flex-col gap-3 px-20 justify-center items-left">
+        <div className="pt-36 flex flex-col gap-3 px-20 justify-center items-left">
           <img
             className="w-[50vw]"
             src={product.thumbnail}
@@ -58,6 +58,12 @@ const page = ({ params }) => {
             <button className="px-4 py-2 bg-green-400" onClick={handleDelete}>
               Delete
             </button>
+            <Link
+              className="m-5 bg-red-500 text-white"
+              href={`/dashboard/admin/products/${params.slug}/update`}
+            >
+              Update
+            </Link>
           </div>
         </div>
       ) : (
