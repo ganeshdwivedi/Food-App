@@ -4,9 +4,9 @@ import "./globals.css";
 import Prvider from "./redux/Prvider";
 const inter = Inter({ subsets: ["latin"] });
 
-const metadata = {
+export const metadata = {
   title: "Food-app",
-  description: "Best Food App",
+  description: "Taste the Joy, Share the Love.",
 };
 
 export default function RootLayout({ children }) {
