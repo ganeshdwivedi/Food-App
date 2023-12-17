@@ -53,11 +53,11 @@ function AdminNav() {
               <li className="">
                 <Link
                   className={`link ${
-                    pathname === "/dashboard/admin/addproducts"
+                    pathname === "/dashboard/admin/addProduct"
                       ? "text-red-800"
                       : ""
                   } hover:text-red-800`}
-                  href="/dashboard/admin/addproducts"
+                  href="/dashboard/admin/addProduct"
                 >
                   Add Products
                 </Link>
@@ -118,11 +118,11 @@ function AdminNav() {
               <li className="text-xl">
                 <Link
                   className={`link ${
-                    pathname === "/dashboard/admin/addproducts"
+                    pathname === "/dashboard/admin/addProduct"
                       ? "text-red-800"
                       : ""
                   } hover:text-red-800`}
-                  href="/dashboard/admin/addproducts"
+                  href="/dashboard/admin/addProduct"
                 >
                   Add Products
                 </Link>
