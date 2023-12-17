@@ -52,12 +52,12 @@ export default function page({ params }) {
                 }}
               >
                 <div className="flex justify-center flex-col items-center">
-                  <p className="font-bold ">Add Products</p>
+                  <p className="font-bold ">Update Product</p>
                   <hr className="h-[2px] w-full mt-4 mb-8 bg-gray-200 border-0 dark:bg-gray-700" />
                 </div>
                 <div className="flex flex-col justify-start items-center">
                   <p className="text-slate-700 text-sm self-start">
-                    Enter product details to Add
+                    Enter product details to update
                   </p>
                   <div className="flex flex-col my-2">
                     <label className="text-sm font-bold">Name</label>
@@ -129,7 +129,7 @@ export default function page({ params }) {
                     onClick={handleSubmit}
                     className="bg-slate-300 rounded-md px-[14vw] text-slate-900 py-5 font-bold"
                   >
-                    Add Product
+                   Update Product
                   </button>
                 </div>
               </form>
