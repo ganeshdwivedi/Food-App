@@ -94,7 +94,7 @@ function page() {
                     By logging in, I confirm that I have read and accept the
                     Terms and Conditionsand the Privacy Policy.
                   </p>
-                  <Link href={"/account/Register"} className="self-start ">
+                  <Link href={"/dashboard/admin/register"} className="self-start ">
                     Don't Have an account yet{" "}
                     <span className="text-lg font-bold underline">
                       Register Here
