@@ -41,7 +41,7 @@ function page() {
 
         <button
           onClick={() => {
-            HandleRemove(item.id);
+            HandleRemove(item._id);
           }}
           className="bg-red-400 h-[80%] m-2 text-white px-4 py-1 rounded-md"
         >
