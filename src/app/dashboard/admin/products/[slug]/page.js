@@ -58,7 +58,7 @@ const page = ({ params }) => {
                 </button>
                 <Link
                   className="m-5 px-4 py-2 bg-slate-800 text-white"
-                  href={`/dashboard/admin/products/${params.slug}/update`}
+                  href={`/dashboard/admin/products/update/${params.slug}`}
                 >
                   Update
                 </Link>
