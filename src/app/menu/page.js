@@ -11,7 +11,7 @@ const page = () => {
   const [product, setProduct] = useState([]);
 
   const getProduct = async () => {
-    const response = await axios.get("/api/product/all");
+    const response = await axios.post("/api/product/all");
     setProduct(response.data.products);
   };
   const handleCart = (item) => {
