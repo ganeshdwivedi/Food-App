@@ -9,7 +9,7 @@ const page = () => {
   const [product, setProduct] = useState([]);
 
   const getProduct = async () => {
-    const response = await axios.post("/api/product/all",{ cache: 'no-store' });
+    const response = await axios.get("/api/product/all",{ cache: 'no-store' });
     setProduct(response.data.products);
   };
 
