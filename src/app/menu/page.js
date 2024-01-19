@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import axios from "axios";
 import Link from "next/link";
 import { addtocart } from "../redux/cartSlice";
 import toast, { Toaster } from "react-hot-toast";
@@ -11,7 +10,8 @@ const page = () => {
   const [product, setProduct] = useState([]);
 
   const getProduct = async () => {
-    const response = await axios.get("/api/product/all",{ cache: 'no-store', next: { revalidate: 0 });
+    const APIData = await fetch("/api/product/all",{ cache: 'no-store', next: { revalidate: 0 });
+    const response = APIData.json();
     setProduct(response.data.products);
   };
   const handleCart = (item) => {
