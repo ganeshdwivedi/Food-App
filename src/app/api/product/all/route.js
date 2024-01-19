@@ -6,10 +6,11 @@ export async function GET(req) {
   await connect();
   try {
     const products = await Product.find({});
-    NextResponse.headers = {
-  'Cache-Control': 'no-cache, no-store, must-revalidate'
-};
-    return NextResponse.json({ products: products });
+   const response = NextResponse.json({ products: products });
+    response.headers = {
+      'Cache-Control': 'no-cache, no-store, must-revalidate'
+    };
+    return response;
   } catch (error) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
