@@ -9,8 +9,14 @@ const page = () => {
   const [product, setProduct] = useState([]);
 
   const getProduct = async () => {
-    const response = await axios.post("/api/product/all",{ cache: 'no-store' });
-    setProduct(response.data.products);
+    const response = await fetch("/api/product/all", {
+      method: 'GET', cache: 'no-store', next: {
+        revalidate: 3,
+      },
+    });
+    const Data = await response.json();
+    console.log(Data);
+    setProduct(Data.products);
   };
 
   useEffect(() => {
